@@ -1,0 +1,17 @@
+name: "Sample React Pipeline"
+
+on:
+    push:
+        branches:
+        - master
+        - main
+
+jobs:
+    build & test: #job1
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: "setup node js"
+              uses: actions/setup-node@v4
+              with:
+                node-version: '21'
