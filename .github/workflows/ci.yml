@@ -23,23 +23,18 @@ jobs:
       - name: "Node version check"
         run: node --version
 
-      - name: "Clone repository"
-        uses: actions/checkout@v2
-
       - name: "Install dependencies"
-        working-directory: vite-project
         run: npm install
 
       - name: "List Directories"
         run: ls  
 
       - name: Build project
-        working-directory: vite-project
         run: npm run build
 
       - name: "upload product ready build file"
         uses: actions/upload-artifact@v4
         with:
           name: build
-          path: vite-project/dist
+          path: dist
           
